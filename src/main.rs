@@ -59,7 +59,7 @@ fn main() {
     parse_flags(&args, &mut commands_map);
     let text = commands_map.get(&FLAGS[0]).unwrap();
     let key_iv_pair = commands_map.get(&FLAGS[1]).unwrap();
-    if key_iv_pair.len() <= 4 {
+    if key_iv_pair.len() < 4 {
         panic!("Key should be atleast 4 charcters long");
     }
     let key = &key_iv_pair[0..key_iv_pair.len() / 2];
